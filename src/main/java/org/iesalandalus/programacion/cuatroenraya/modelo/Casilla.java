@@ -10,46 +10,43 @@ public class Casilla {
 	// metodos
 	public boolean estaOcupada() {
 
-		boolean casillaOcupada = false;
-
-		if (this.ficha == Ficha.AZUL || this.ficha == Ficha.VERDE) {
-			casillaOcupada = true;
+		if (getFicha() != null) {
+			return true;
+		} else {
+			return false;
 		}
-		return casillaOcupada;
+
 	}
 
 	// setters y getters
 	public Ficha getFicha() {
-		return ficha;
+		return this.ficha;
 	}
 
 	public void setFicha(Ficha ficha) throws OperationNotSupportedException {
-		if (estaOcupada() == false) {
-			if (ficha == null) {
-				throw new NullPointerException("ERROR: No se puede poner una ficha nula.");
-			} else if (ficha == Ficha.AZUL) {
-				this.ficha = ficha.AZUL;
-			} else if (ficha == Ficha.VERDE) {
-				this.ficha = ficha.VERDE;
-			} else {
-				throw new IllegalArgumentException("ERROR:el color escogido es incorrecto.");
-			}
-		} else {
-			throw new OperationNotSupportedException("ERROR: Ya contengo una ficha.");
+		if (ficha == null) {
+			throw new NullPointerException("ERROR: No se puede poner una ficha nula.");
 		}
+		
+		if(this.ficha != null) {
+			throw new OperationNotSupportedException("ERROR: Ya contengo una ficha.");
+		} else {
+			this.ficha = ficha;
+		}
+	
 	}
 
 	// constructor por defecto
 	public Casilla() throws IllegalArgumentException {
-		ficha = null;
+		this.ficha = null; //es recomendable siempre poner this cuando me refiero al atributo de clase
 	}
 
 	@Override
 	public String toString() {
-		if (ficha == null)
+		if (this.ficha == null)
 			return " ";
 		else
-			return String.format("%.1s", ficha);
+			return String.format("%.1s", this.ficha);
 
 	}
 

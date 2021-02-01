@@ -53,6 +53,7 @@ public class TableroTest {
 			}
 			assertThat(TABLERO_DEBERIA_ESTAR_LLENO, tablero.estaLleno(), is(true));
 		} catch (Exception e) {
+			System.out.println(e);
 			fail(NO_EXCEPCION);
 		}
 	}
