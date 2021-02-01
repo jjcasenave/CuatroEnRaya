@@ -10,31 +10,29 @@ public class Consola {
 
 	public static String leerNombre() {
 		return null;
+		//***************SIN TERMINAR***********************
 	}
 
 	public static Ficha elegirColorFichas() {
 		return null;
+		//***************SIN TERMINAR***********************
 	}
 	
 	public static Jugador leerJugador() {
-		return null;		
+		return null;	
+		//***************SIN TERMINAR***********************
 	}
 	
 	public static Jugador leerJugador(Ficha ficha) {
 		return null;
+		//***************SIN TERMINAR***********************
 	}
 	
 	public static int leerColumna(Jugador jugador) {
 		return 0;
+		//***************SIN TERMINAR***********************
 		
 	}
 
 }
 
-/*
- * Crea el método leerColumna que recibirá como parámetro el jugador que debe
- * introducir la columna para una tirada y devolverá un entero representando la
- * columna elegida. El método imprimirá el nombre del jugador y le indicará que
- * elija la columna en la que quiere introducir su ficha y esto lo repetirá
- * mientras la columna elegida no sea válida.
- */
