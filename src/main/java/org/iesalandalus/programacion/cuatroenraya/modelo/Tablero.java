@@ -65,7 +65,7 @@ public class Tablero {
 	private void comprobarFicha(Ficha ficha) {
 
 		if (!(ficha == ficha.AZUL || ficha == ficha.VERDE)) {
-			throw new IllegalArgumentException("ERROR: no es valido ");
+			throw new IllegalArgumentException("ERROR: La ficha introducida no es correcta.");
 		}
 
 	}
@@ -74,16 +74,27 @@ public class Tablero {
 		// si la columna no es correcta, lanza excepcion
 
 		if (!(columna < 0 || columna > 6))
-			throw new IllegalArgumentException("ERROR: ");
+			throw new IllegalArgumentException("ERROR: La columna introducida no es correcta.");
 
+	}
+
+	private int getPrimeraFilaVacia(int columna) {
+		int fila = 0;
+		for (int i = 0; i < FILAS; i++) {
+			if (estaVacio()) {
+				fila = i;
+			}
+		}
+		return fila;
+	}
+
+	private int menor(int num1, int num2) {
+		return Math.min(num1, num2);
 	}
 
 }
 
 /*
- * 
- * Crea el método getPrimeraFilaVacia que devolverá la primera fila vacía para
- * la columna pasada por parámetro.
  * 
  * Crea el método objetivoAlcanzado que aceptará como parámetro el número de
  * fichas consecutivas que llevamos en una de las comprobaciones (horizontal,
@@ -99,7 +110,6 @@ public class Tablero {
  * que queremos comprobar si hay cuatro fichas del mismo color seguidas en
  * vertical.
  * 
- * Crea el método menor que recibirá dos enteros y devolverá el menor de ellos.
  * 
  * Crea el método comprobarDiagonalNE que recibirá como parámetros la fila, la
  * columna y la ficha para la que queremos comprobar si hay cuatro fichas del
