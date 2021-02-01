@@ -92,6 +92,11 @@ public class Tablero {
 		return Math.min(num1, num2);
 	}
 
+	public boolean introducirFicha(int leerColumna, Ficha colorFichas) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
 
 /*
