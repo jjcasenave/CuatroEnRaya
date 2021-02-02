@@ -27,14 +27,6 @@ public class Tablero {
 		return !casillas[0][columna].estaOcupada();
 	}
 
-	/*
-	 * private boolean columnaVacia(int columna) { boolean columnaVacia = true; for
-	 * (int i = 0; i < FILAS; i++) { if (casillas[i][columna].estaOcupada())
-	 * columnaVacia = false; } return columnaVacia;
-	 * 
-	 * }
-	 */
-
 	// metodo estaVacio
 
 	public boolean estaVacio() {
@@ -45,25 +37,11 @@ public class Tablero {
 		return vacio;
 	}
 
-	/*
-	 * public boolean estaVacio() { boolean tableroVacio = true; for (int i = 0; i <
-	 * COLUMNAS; i++) { if (columnaVacia(i) == true) { tableroVacio = true; } else {
-	 * tableroVacio = false; } } return tableroVacio; }
-	 */
-
 	// metodo columnaLlena
 
 	private boolean columnaLlena(int columna) {
 		return casillas[FILAS - 1][columna].estaOcupada();
 	}
-
-	/*
-	 * private boolean columnaLlena(int columna) { boolean columnaLlena = false; for
-	 * (int i = 0; i < FILAS; i++) { if (casillas[i][columna].estaOcupada())
-	 * columnaLlena = true; } return columnaLlena;
-	 * 
-	 * }
-	 */
 
 	// metodo estaLleno
 
@@ -191,14 +169,6 @@ public class Tablero {
 
 		return diagonalNeConseguida;
 
-		/*
-		 * for (int i = filaInicial; i < FILAS; i++) for (int j = columnaInicial; j <
-		 * COLUMNAS; j++) if (casillas[i][j].getFicha() == ficha) { contadorFicha++; if
-		 * (objetivoAlcanzado(contadorFicha))// == true) diagonalNeConseguida = true; }
-		 * else { contadorFicha = 0; }
-		 * 
-		 * return diagonalNeConseguida;
-		 */
 	}
 
 	private boolean comprobarDiagonalNO(int fila, int columna, Ficha ficha) {
@@ -225,12 +195,6 @@ public class Tablero {
 
 		return diagonalNoConseguida;
 
-		/*
-		 * for (int i = filaInicial; i < FILAS; i++) for (int j = columnaInicial; j > 0;
-		 * j--) if (casillas[i][j].getFicha() == ficha) { contadorFicha++; if
-		 * (objetivoAlcanzado(contadorFicha) == true) diagonalNoConseguida = true; }
-		 * else { contadorFicha = 0; } return diagonalNoConseguida;
-		 */
 	}
 
 	private boolean comprobarTirada(int fila, int columna) {
